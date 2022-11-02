@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header/Header';
+import MainVideo from './Components/MainVideo/MainVideo';
+import MainVideoInfo from './Components/MainVideoInfo/MainVideoInfo';
+import Comments from './Components/Comments/Comments';
+import SideVideos from './Components/SideVideos/SideVideos';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className="header">
+      <Header />
     </div>
+    <main>
+        <div className='hero-video'>
+          <MainVideo />
+        </div>
+
+        <section className='bottom-container'>
+
+            <div className='main-left'> 
+              <MainVideoInfo />  
+              <Comments />
+            </div>
+
+            <aside className='main-right'> 
+            <SideVideos />
+            </aside>
+
+        </section>   
+    </main>
+    </>
   );
 }
 
