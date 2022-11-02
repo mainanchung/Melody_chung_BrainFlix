@@ -1,6 +1,5 @@
-import './App.css';
+import './App.scss';
 import Header from './Components/Header/Header';
-import MainVideo from './Components/MainVideo/MainVideo';
 import MainVideoInfo from './Components/MainVideoInfo/MainVideoInfo';
 import Comments from './Components/Comments/Comments';
 import SideVideos from './Components/SideVideos/SideVideos';
@@ -13,18 +12,19 @@ function App() {
     </div>
     <main>
         <div className='hero-video'>
-          <MainVideo />
+        <video></video>
         </div>
-
         <section className='bottom-container'>
-
             <div className='main-left'> 
               <MainVideoInfo />  
               <Comments />
             </div>
 
-            <aside className='main-right'> 
-            <SideVideos />
+            <aside className='main-right'>
+              <div className='side-videos'> 
+                <h2 className='side-videos__title'>NEXT VIDEOS</h2>
+                <SideVideos />
+                </div>
             </aside>
 
         </section>   
