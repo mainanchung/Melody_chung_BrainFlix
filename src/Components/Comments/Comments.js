@@ -5,7 +5,6 @@ import CommentList from '../CommentList/CommentList';
 function Comments(){
 
     return (
-
         <div className='comments'>
             <h3 className='comments__title'>{3}Comments</h3>
                 <div className='comments__form-container'>
@@ -14,6 +13,8 @@ function Comments(){
                 </div>
 
                 <div className='comments__list'>
+                    <CommentList />
+                    <CommentList />
                     <CommentList />
                 </div>
         </div>

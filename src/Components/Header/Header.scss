@@ -51,15 +51,7 @@
         }
 
         &--btn{
-            border-radius: 4px;
-            height: 40px;
-            font-size: 0.9rem;
-            padding: 0 0.5rem;
-            font-weight: 600;
-            font-family: "Avenir";
-            background-color: $brainFlix-blue;
-            color: $white;
-            border: none;
+           @include btn-mobile;
             margin: 1rem;
             display: flex;
             justify-content: center;
