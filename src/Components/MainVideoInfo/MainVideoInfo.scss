@@ -1,0 +1,64 @@
+@use '../../style/partials/font' as *;
+@use '../../style/partials/mixins'as *;
+@use '../../style/partials/variable' as *;
+
+
+
+.main-video{
+    padding: 1rem;
+
+    &__title{
+        font-weight: 700;
+        margin-top: 0%;
+        padding:1rem 0;
+        border-bottom: solid $mercury 1px;
+        color: $brainFlix-black;
+    }
+
+    &__info--author{
+        font-weight: 700;
+        font-size: 0.813rem;
+        color: $brainFlix-black;
+        margin: 0%;
+    }
+
+    &__info--date{
+        font-size: 0.813rem;
+        color: $silver;
+    }
+
+    &__info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--right{
+            display: flex;
+            flex-direction: column;
+        }
+
+        &--views,&--likes{
+            display: flex;
+            align-items: center;
+            font-size: 0.813rem;
+            color: $silver;
+            margin-bottom: 1rem;
+        }
+
+        &--views_number, &--likes_number{
+            padding: 0 0.5rem;
+            margin: 0%;
+        }
+
+        
+
+    }
+
+    &__intro{
+        color: $brainFlix-black;
+        font-size: 0.813rem;
+        line-height: 1.15rem;
+    }
+
+
+}

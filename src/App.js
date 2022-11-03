@@ -11,9 +11,9 @@ function App() {
       <Header />
     </div>
     <main>
-        <div className='hero-video'>
-        <video></video>
-        </div>
+        {/* <div className='hero-video'> */}
+        <video className='hero-video' poster=''></video>
+        {/* </div> */}
         <section className='bottom-container'>
             <div className='main-left'> 
               <MainVideoInfo />  

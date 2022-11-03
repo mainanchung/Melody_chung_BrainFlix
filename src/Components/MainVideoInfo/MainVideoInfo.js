@@ -1,4 +1,6 @@
-import './MainVideoInfo.scss'
+import './MainVideoInfo.scss';
+import Views from '../../ Assets/Images/Icons/views.svg';
+import Likes from '../../ Assets/Images/Icons/likes.svg'
 
 function MainVideoInfo(){
     return(
@@ -14,22 +16,19 @@ function MainVideoInfo(){
 
                     <div className='main-video__info--right'>
                         <div className='main-video__info--views'>
-                            <img className="main-video__info--icon" src=''></img>
+                            <img className="main-video__info--icon" src={Views} alt=''></img>
                             <p className='main-video__info--views_number'>1,133,033</p>
                         </div>
 
                         <div className='main-video__info--likes'>
-                            <img className="main-video__info--icon" src=''></img>
+                            <img className="main-video__info--icon" src={Likes} alt=''></img>
                             <p className='main-video__info--likes_number'>110,000</p>
                         </div>
                     </div>
-                    <p className='main-video__intro'>On a gusty day in Southern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event veteran Kyle Strait, who won the event for the second time</p>
+                    
                 </div>
+                <p className='main-video__intro'>On a gusty day in Southern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event veteran Kyle Strait, who won the event for the second time</p>
         </div>
-
-
-
-
     )
 }
 
