@@ -2,10 +2,8 @@
 @use '../../style/partials/mixins'as *;
 @use '../../style/partials/variable' as *;
 
-
-
 .main-video{
-    padding: 1rem;
+    padding: 0 1rem;
 
     &__title{
         font-weight: 700;

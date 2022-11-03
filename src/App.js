@@ -3,17 +3,21 @@ import Header from './Components/Header/Header';
 import MainVideoInfo from './Components/MainVideoInfo/MainVideoInfo';
 import Comments from './Components/Comments/Comments';
 import SideVideos from './Components/SideVideos/SideVideos';
+import { useState } from 'react';
+
+
 
 function App() {
+
+
+  
   return (
     <>
     <div className="header">
       <Header />
     </div>
     <main>
-        {/* <div className='hero-video'> */}
         <video className='hero-video' poster=''></video>
-        {/* </div> */}
         <section className='bottom-container'>
             <div className='main-left'> 
               <MainVideoInfo />  

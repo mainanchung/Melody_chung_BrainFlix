@@ -17,7 +17,6 @@
         margin-top: 0%;
         font-size: 0.813rem;
         
-
         @include tablet{
             font-size: 2.25rem;
         }
@@ -46,8 +45,8 @@
     &__avatar{
         background-image: url('../../\ Assets/Images/Mohan-muruge.jpg');
         border-radius: 50% 50%;
+        height: 2.5rem;
         width: 2.5rem;
-        height: 2.25rem;
         margin: 1rem 1rem 1rem 0;
         background-size: cover;
         background-position: center center;
@@ -69,9 +68,9 @@
 
         &__area{
             font-family: "Avenir";
-            padding: 1rem;
+            padding: 0.5rem 1rem;
+            height: 2.5rem;
             border-radius: 4px;
-            height: 6rem;
             border: 1px $mercury solid;
             margin-bottom: 1.5rem;
             background-color: $alabaster;
@@ -89,7 +88,15 @@
         }
 
         &__btn{
-            @include btn-mobile
+            @include btn-mobile;
+            position: relative;
+
+            &::before{
+                content: url('../../\ Assets/Images/Icons/add_comment.svg');
+                top:0.5rem;
+                left: 0.5rem;
+                position: absolute;
+            }
         }
 
     }
@@ -103,8 +110,8 @@
         font-family: "Avenir";
 
         &--avatar{
-            height: 2.8rem;
-            width: 2.8rem;
+            height: 2.5rem;
+            width: 2.5rem;
             background-color: $mercury;
             border-radius: 50%;
             margin: 1rem 1rem 0 0;
