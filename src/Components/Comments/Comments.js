@@ -6,9 +6,9 @@ function Comments(){
 
     return (
         <div className='comments'>
-            <h3 className='comments__title'>{3}Comments</h3>
+            <h3 className='comments__title'>{3} Comments</h3>
                 <div className='comments__form-container'>
-                    <div className='commens__avatar'></div>
+                    <div className='comments__avatar'></div>
                         <CommentForm /> 
                 </div>
 

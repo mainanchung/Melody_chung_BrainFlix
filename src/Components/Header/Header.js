@@ -5,7 +5,7 @@ import Avatar from '../../ Assets/Images/Mohan-muruge.jpg'
 function Header(){
 
     return (
-        <header className='header'>
+        <header className='header-container'>
             <img className="header__logo" src={Logo} alt=''></img>
                 <div className='header__search'>
                     <input className='header__search-bar' type='search' id="search" name='search' placeholder='Search'/>
