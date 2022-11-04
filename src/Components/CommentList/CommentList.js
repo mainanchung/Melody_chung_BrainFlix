@@ -1,8 +1,8 @@
 
-function CommentList({id, timestamp, name, comment}){
+function CommentList({id, timestamp, name, comment }){
     
     return(
-        <div className='comments__box'>
+        <div className='comments__box'> 
             <div className="comments__box--avatar"></div>
              <div className="comments__box--content">
                 <div className="comments__box--top">
@@ -11,7 +11,7 @@ function CommentList({id, timestamp, name, comment}){
                 </div>
                 <p className="comments__box--text">{comment}</p>
             </div> 
-        </div>
+        </div>  
     )
 }
 export default CommentList;

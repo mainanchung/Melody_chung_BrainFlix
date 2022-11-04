@@ -2,19 +2,19 @@ import './Comments.scss';
 import CommentForm from '../CommentForm/CommentForm';
 import CommentList from '../CommentList/CommentList';
 
-function Comments({id, name ,comment,numberOfComment, timestamp,allComment}){
-
+function Comments({ currentVideo}){
+   
     return (
         <div className='comments'>
-            <h3 className='comments__title'>{numberOfComment} Comments</h3>
+            <h3 className='comments__title'>{currentVideo.length} Comments</h3>
                 <div className='comments__form-container'>
                     <div className='comments__avatar'></div>
                         <CommentForm /> 
                 </div>
 
                 <div className='comments__list'>
-                {allComment.map((ele) => {
-                  return(
+                {currentVideo.comments.map((ele) => {
+                  return(   
                     <CommentList 
                     key={ele.id}
                     id={ele.id}
