@@ -28,7 +28,12 @@ function App() {
       <Header />
     </div>
     <main>
-        <video className='hero-video' poster={currentVideo.image}></video>
+        <div className='video__container'>
+          <video className='hero-video' poster={currentVideo.image}>
+          <source src={currentVideo.video} type=""/>
+          <source src={currentVideo.video} type=""/>
+          </video>
+        </div>
         <section className='bottom-container'>
             <div className='main-left'> 
               <MainVideoInfo

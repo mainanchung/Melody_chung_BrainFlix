@@ -5,12 +5,27 @@
 .main-video{
     padding: 0 1rem;
 
+    @include tablet{
+        padding: 0 2.25rem;
+    }
+
     &__title{
         font-weight: 700;
         margin-top: 0%;
         padding:1rem 0;
         border-bottom: solid $mercury 1px;
         color: $brainFlix-black;
+
+        @include tablet{
+            border-bottom:none;
+            font-size: 2.06rem;
+            font-weight: 900;
+            margin: 0%;
+            }
+    
+            @include desktop{
+                padding-left: 8.6rem;
+            }
     }
 
     &__info--author{
@@ -18,11 +33,21 @@
         font-size: 0.813rem;
         color: $brainFlix-black;
         margin: 0%;
+        @include tablet{
+            margin-right: 2rem;
+            font-size: 0.875rem;
+            font-weight: 900;
+        }
     }
 
     &__info--date{
         font-size: 0.813rem;
         color: $silver;
+
+        @include tablet{
+            font-size: 0.875rem;
+            margin: 0%;
+        }
     }
 
     &__info{
@@ -30,9 +55,27 @@
         justify-content: space-between;
         align-items: center;
 
+        @include tablet{
+            align-items: flex-start;
+            font-size: 0.875rem;
+            border-bottom: solid $mercury 1px;
+        }
+
+        &--left{
+            @include tablet{
+                display: flex;
+                font-size: 0.875rem;
+            }
+            
+        }
+
         &--right{
             display: flex;
             flex-direction: column;
+
+            @include tablet{
+                flex-direction: row;
+            }
         }
 
         &--views,&--likes{
@@ -41,6 +84,9 @@
             font-size: 0.813rem;
             color: $silver;
             margin-bottom: 1rem;
+            @include tablet{
+                margin-left: 2rem;
+            }
         }
 
         &--views_number, &--likes_number{

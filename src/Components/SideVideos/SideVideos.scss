@@ -7,6 +7,10 @@
 .side-videos{
     padding: 0 1rem;
 
+    @include tablet{
+        padding: 0 2.25rem;
+    }
+
     &__title{
     font-weight: 700;
     font-size: 0.813rem;
@@ -16,32 +20,48 @@
 
     &--box{
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        padding: 1rem 0;
+
+        @include tablet{
+            justify-content: flex-start;
+        }
     }
 
     &--motion{
         border-radius: 4px;
         background-color: $mercury;
-        height: 6rem;
-        width: 9rem;
+        height: 4rem;
+        width: 7rem;
         margin-right:1rem ;
         object-fit: cover;
     }
 
     &--content{
-        width:8rem; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width:10rem;
+        height: 6rem; 
     }
 
     &--title, &--author{
         color: $brainFlix-black;
         font-size: 0.813rem;
-        line-height: 1.125rem;
+        line-height: 1rem;
 
         @include tablet{
             font-size: 0.875rem;
             line-height: 1.3rem;
         }
+    }
+
+    &--title{
+        margin-bottom: 0%;
+    }
+
+    &--author{
+        margin-top: 0%;
     }
 
  

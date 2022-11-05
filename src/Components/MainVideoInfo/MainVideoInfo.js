@@ -3,15 +3,15 @@ import Views from '../../ Assets/Images/Icons/views.svg';
 import Likes from '../../ Assets/Images/Icons/likes.svg'
 
 function MainVideoInfo({currentVideo}){
+    let convertTimstamp = new Intl.DateTimeFormat('en-US', { day: '2-digit', month: '2-digit', year:'numeric'}).format(currentVideo.timestamp)
     return(
-
         <div className='main-video'>
             <h1 className='main-video__title'>{currentVideo.title}</h1>
             <div className='main-video__info'>
 
                     <div className='main-video__info--left'>
                         <h2 className='main-video__info--author'>by {currentVideo.channel}</h2>
-                        <p className='main-video__info--date'>{currentVideo.timestamp}</p>
+                        <p className='main-video__info--date'>{convertTimstamp}</p>
                     </div>
 
                     <div className='main-video__info--right'>

@@ -6,7 +6,7 @@ function Comments({ currentVideo}){
    
     return (
         <div className='comments'>
-            <h3 className='comments__title'>{currentVideo.length} Comments</h3>
+            <h3 className='comments__title'>{currentVideo.comments.length} Comments</h3>
                 <div className='comments__form-container'>
                     <div className='comments__avatar'></div>
                         <CommentForm /> 
