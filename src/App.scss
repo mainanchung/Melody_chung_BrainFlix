@@ -31,4 +31,23 @@ html,body{
     object-fit: contain;
     height: 108vh;
   }
+
+  @include desktop{
+    height: 35rem;
+  }
+}
+
+.bottom-container{
+  @include desktop{
+    display: flex;
+  }
+  
+}
+
+.main-left{
+  @include desktop{
+    width: 70%;
+    border-right: solid $mercury 1px;
+  }
+  
 }

@@ -9,6 +9,10 @@
         padding: 0 2.25rem;
     }
 
+    @include desktop{
+        padding: 0 0 0 4rem;
+    }
+
     &__title{
         font-weight: 700;
         margin-top: 0%;
@@ -23,31 +27,6 @@
             margin: 0%;
             }
     
-            @include desktop{
-                padding-left: 8.6rem;
-            }
-    }
-
-    &__info--author{
-        font-weight: 700;
-        font-size: 0.813rem;
-        color: $brainFlix-black;
-        margin: 0%;
-        @include tablet{
-            margin-right: 2rem;
-            font-size: 0.875rem;
-            font-weight: 900;
-        }
-    }
-
-    &__info--date{
-        font-size: 0.813rem;
-        color: $silver;
-
-        @include tablet{
-            font-size: 0.875rem;
-            margin: 0%;
-        }
     }
 
     &__info{
@@ -60,6 +39,33 @@
             font-size: 0.875rem;
             border-bottom: solid $mercury 1px;
         }
+
+        @include desktop{
+            padding-right: 2rem;
+        }
+
+        &--author{
+            font-weight: 700;
+            font-size: 0.813rem;
+            color: $brainFlix-black;
+            margin: 0%;
+            @include tablet{
+                margin-right: 2rem;
+                font-size: 0.875rem;
+                font-weight: 900;
+            }
+        }
+    
+        &--date{
+            font-size: 0.813rem;
+            color: $silver;
+    
+            @include tablet{
+                font-size: 0.875rem;
+                margin: 0%;
+            }
+        }
+
 
         &--left{
             @include tablet{
@@ -100,6 +106,11 @@
         color: $brainFlix-black;
         font-size: 0.813rem;
         line-height: 1.15rem;
+        padding-bottom: 1rem;
+
+        @include desktop{
+            padding-right: 2rem;
+        }
     }
 
 

@@ -14,6 +14,11 @@
         padding: 1rem 2.25rem;
     }
 
+    @include desktop{
+        padding-right: 0%;
+        padding-left: 4rem;
+    }
+
     &__title{
         font-weight: 700;
         margin-top: 0%;
@@ -27,7 +32,7 @@
         }
 
         @include desktop{
-            padding-left: 6.3rem;
+          
         }
 
     }
@@ -44,6 +49,11 @@
             flex-direction: row;
             align-items:flex-end;
         }
+
+        @include desktop{
+            justify-content: flex-end;
+            margin-right: 2rem;
+        }
     }
 
     &__form-container{
@@ -56,6 +66,10 @@
             align-items: flex-end;
             height: 6rem;
             justify-content: space-between;
+        }
+
+        @include desktop{
+     
         }
     }
 
@@ -79,6 +93,10 @@
         flex-direction: column;
         justify-content: flex-start;
         width: 100%;
+
+        @include desktop{ 
+            width:auto;
+        }
 
 
         &__title{
@@ -104,6 +122,10 @@
                 height: 2.5rem;
                 margin: 0 1.5rem 0 0;
                 }
+
+            @include desktop {
+                width:35vw;
+            }  
     
             &:focus{
                 border: none;
@@ -118,6 +140,10 @@
             @include tablet{
                 @include btn-tablet_desktop;
                 width: 18rem;
+            }
+
+            @include desktop{
+                width: 10rem;
             }
 
             &::before{
@@ -138,14 +164,14 @@
         display: flex;
         font-family: "Avenir";
 
+        
+
         &--avatar{
             height: 2.5rem;
             width: 2.5rem;
             background-color: $mercury;
             border-radius: 50%;
             margin: 1rem 1rem 0 0;
-
-         
         }
 
         &--content{
@@ -158,6 +184,9 @@
                 display: grid;
                 width: 90%;
                 margin-left: 0.5rem;
+            }
+            @include desktop{
+                margin-right: 2rem;
             }
         }
 
@@ -191,11 +220,6 @@
         &--text{
             margin: 0;
         }
-
-        
-
-
-
     }
 
 }

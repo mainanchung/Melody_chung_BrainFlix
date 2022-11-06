@@ -12,7 +12,7 @@ import { BrowserRouter, Navigate, NavLink, Routes, Route } from 'react-router-do
 
 function App() {
   
-  const [sideVideos, setSideVideos] = useState(videos)
+  const sideVideos = videos
   const [currentVideo, setCurrentVideo] = useState(videosDetail[0])
   
 
@@ -51,7 +51,7 @@ function App() {
                 {sideVideos.filter(ele => ele.id !== currentVideo.id).map((video) => {
                  return( <SideVideos 
                   key={video.id}
-                  videoContent = {video}
+                  video = {video}
                   selectHandler={changeCurrentVideo}
                   />
                   )

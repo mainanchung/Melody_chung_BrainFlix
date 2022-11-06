@@ -18,6 +18,11 @@
             justify-content: space-between;
             align-items: center;
         }
+
+        @include desktop{
+            justify-content: space-between;
+            padding: 0 3rem;
+        }
     }
     
     &__logo{
@@ -26,6 +31,11 @@
         @include tablet{
             margin-right: 5rem;
         }   
+
+        @include desktop{
+           margin-left: 3.5rem; 
+           margin-right: 25rem;
+        }
     }
 
     &__search{
@@ -45,7 +55,7 @@
             background-color: $alabaster;
 
             @include tablet{
-                width: 15rem;
+                width: 16rem;
                 margin: 0%;
 
             }
@@ -86,6 +96,10 @@
             background-position: center center;
             @include onlyshowsonmobile{
                 display: none;
+            }
+
+            @include desktop{
+                margin-right: 3.5rem;
             }
         }
 

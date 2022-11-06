@@ -11,6 +11,11 @@
         padding: 0 2.25rem;
     }
 
+    @include desktop{
+        padding-left: 2rem;
+
+    }
+
     &__title{
     font-weight: 700;
     font-size: 0.813rem;
