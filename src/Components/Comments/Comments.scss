@@ -31,10 +31,6 @@
             font-weight: 900;
         }
 
-        @include desktop{
-          
-        }
-
     }
 
     &__right{
@@ -85,7 +81,6 @@
         @include tablet{
             margin: 0%;
         }
-    
     }
 
     &-form{
@@ -97,7 +92,6 @@
         @include desktop{ 
             width:auto;
         }
-
 
         &__title{
             font-weight: 700;
@@ -153,7 +147,6 @@
                 position: absolute;
             }
         }
-
     }
 
     &__box{
@@ -163,8 +156,6 @@
         padding-bottom: 1rem;
         display: flex;
         font-family: "Avenir";
-
-        
 
         &--avatar{
             height: 2.5rem;
@@ -204,8 +195,7 @@
             @include tablet{
                 font-size: 0.875rem;
                 line-height: 1.3rem;
-            }
-            
+            }   
         }
 
         &--name{

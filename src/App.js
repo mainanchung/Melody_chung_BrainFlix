@@ -15,7 +15,6 @@ function App() {
   const sideVideos = videos
   const [currentVideo, setCurrentVideo] = useState(videosDetail[0])
   
-
   //function to change current video//
   const changeCurrentVideo = (id) => {
     setCurrentVideo(videosDetail.find(video => video.id === id))
