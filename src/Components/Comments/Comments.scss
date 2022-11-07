@@ -118,18 +118,22 @@
                 }
 
             @include desktop {
-                width:35vw;
+                width:42vw;
             }  
     
             &:focus{
                 border: none;
-                outline: $brainFlix-black 1px solid;
+                outline: $brainFlix-blue 2px solid;
             } 
         }
 
         &__btn{
             @include btn-mobile;
             position: relative;
+
+            &:hover{
+                cursor: pointer;
+                    }
 
             @include tablet{
                 @include btn-tablet_desktop;
@@ -142,8 +146,8 @@
 
             &::before{
                 content: url('../../\ Assets/Images/Icons/add_comment.svg');
-                top:0.5rem;
-                left: 0.6rem;
+                // top:0.5rem;
+                left: 0.5rem;
                 position: absolute;
             }
         }

@@ -40,6 +40,10 @@
         width: 7rem;
         margin-right:1rem ;
         object-fit: cover;
+
+        &:hover{
+            cursor: pointer;
+        }
     }
 
     &--content{
@@ -54,6 +58,10 @@
         color: $brainFlix-black;
         font-size: 0.813rem;
         line-height: 1rem;
+
+        &:hover{
+            cursor: pointer;
+                }
 
         @include tablet{
             font-size: 0.875rem;

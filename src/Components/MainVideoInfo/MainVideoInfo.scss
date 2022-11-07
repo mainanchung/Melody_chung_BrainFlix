@@ -107,6 +107,10 @@
         font-size: 0.813rem;
         line-height: 1.15rem;
         padding-bottom: 1rem;
+        
+        @include tablet{
+            font-size: 0.875rem;
+        }
 
         @include desktop{
             padding-right: 2rem;
