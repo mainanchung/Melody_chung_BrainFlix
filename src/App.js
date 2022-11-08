@@ -28,7 +28,7 @@ function App() {
     </div>
     <main>
         <div className='video__container'>
-          <video className='hero-video' poster={currentVideo.image}>
+          <video className='hero-video' controls poster={currentVideo.image}>
           <source src={currentVideo.video} type=""/>
           <source src={currentVideo.video} type=""/>
           </video>

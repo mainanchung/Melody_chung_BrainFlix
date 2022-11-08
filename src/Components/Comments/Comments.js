@@ -2,7 +2,8 @@ import './Comments.scss';
 import CommentForm from '../CommentForm/CommentForm';
 import CommentList from '../CommentList/CommentList';
 
-function Comments({ currentVideo}){
+
+function Comments({currentVideo}){
    
     return (
         <div className='comments'>
