@@ -1,12 +1,16 @@
 import './App.scss';
+
 import Header from './Components/Header/Header';
 import MainVideoInfo from './Components/MainVideoInfo/MainVideoInfo';
 import Comments from './Components/Comments/Comments';
 import SideVideos from './Components/SideVideos/SideVideos';
+
 import videos from './Data/videos.json';
 import videosDetail from './Data/video-details.json';
+
 import { useState } from 'react';
 import { BrowserRouter, Navigate, NavLink, Routes, Route } from 'react-router-dom'
+import UploadPage from './pages/UploadPage';
 
 
 
@@ -28,7 +32,7 @@ function App() {
     </div>
     <main>
         <div className='video__container'>
-          <video className='hero-video' poster={currentVideo.image}>
+          <video className='hero-video' controls poster={currentVideo.image}>
           <source src={currentVideo.video} type=""/>
           <source src={currentVideo.video} type=""/>
           </video>
@@ -61,6 +65,7 @@ function App() {
 
         </section>   
     </main>
+    {/* <UploadPage />     */}
     </>
   );
 }
