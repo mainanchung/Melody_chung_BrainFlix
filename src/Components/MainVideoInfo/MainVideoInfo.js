@@ -34,13 +34,4 @@ function MainVideoInfo({currentVideo}){
 
 
 
-
-
-
-
-
-
-
-
-
 export default MainVideoInfo;
