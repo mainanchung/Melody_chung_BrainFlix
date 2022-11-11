@@ -2,7 +2,17 @@ import Header from "../Components/Header/Header";
 import UploadVideo from '../ Assets/Images/Upload-video-preview.jpg';
 import './UploadPage.scss';
 
+import { Navigate, NavLink, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+
 function UploadPage(){
+
+    const navigate = useNavigate();
+
+    const upload = () => {
+        alert("UPLOADING...")
+        navigate("/")
+    }
 
    return(
         <>
@@ -26,7 +36,7 @@ function UploadPage(){
                 </form>  
 
                 <div className="upload-video__btn-box">
-                    <button className="upload-video__btn--publish">PUBLISH</button>   
+                    <button onClick={upload} className="upload-video__btn--publish">PUBLISH</button>   
                     <button className="upload-video__btn--cancel">CANCEL</button>
                 </div> 
 
@@ -36,7 +46,6 @@ function UploadPage(){
 
         </>
    )  
-
 }
 
 export default UploadPage;

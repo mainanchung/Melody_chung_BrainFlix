@@ -109,6 +109,10 @@
             margin-bottom: 1rem;
             background-color: $alabaster;
             color: $brainFlix-black;
+
+            &--invalid{
+                border: 1px #d22dd2 solid;
+            }
     
             @include tablet{
                 width:55vw;
