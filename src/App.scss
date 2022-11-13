@@ -12,41 +12,4 @@ html,body{
   box-sizing: border-box;
 }
 
-// .video__container{
-//   position: relative;
-//   padding-bottom: 56.25%;
-//   padding-top: 30px;
-//   height: 0;
-//   overflow: hidden;
-// }
 
-.hero-video{
-  background-color: $brainFlix-DarkBlack;
-  width: 100%;
-  height: 11.5rem;
-  object-fit: cover;
-
-  @include tablet{
-    object-fit: contain;
-    height: 108vh;
-  }
-
-  @include desktop{
-    height: 35rem;
-  }
-}
-
-.bottom-container{
-  @include desktop{
-    display: flex;
-  }
-  
-}
-
-.main-left{
-  @include desktop{
-    width: 70%;
-    border-right: solid $mercury 1px;
-  }
-  
-}

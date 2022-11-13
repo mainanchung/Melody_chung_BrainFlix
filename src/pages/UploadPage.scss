@@ -3,35 +3,105 @@
 @use '../style/partials/variable' as *;
 
 
-
-
 .upload-video{
     padding: 0 1rem;
     border-top: solid $mercury 1px;
     font-family: 'Avenir';
+
+    @include tablet{
+        padding: 0 2.25rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include desktop{
+        padding:0 6.5rem;            
+    }
 
     &__title{
         font-weight: 700;
         margin: 0%;
         padding: 1rem 0;
         color: $brainFlix-black;
+
+        @include tablet{
+            margin:0;
+            padding: 2rem 0 1.5rem 0;
+            font-size: 2rem;
+            font-weight: 900;
+            border-bottom: $mercury 1px solid;
+            }
     }
 
+    &__container{
+        @include tablet{
+            padding: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+        }
+        @include desktop{
+            flex-direction: row;
+            align-items: baseline;
+            padding: 0.5rem 0 0 0;
+            margin-bottom: 1.5rem;
+            border-bottom: $mercury 1px solid;
+        }
+    }
+
+    &__thumbnail{
+        @include tablet{
+            display: flex;
+            flex-direction: column;
+        }
+        @include desktop{
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            height: 13.8rem;
+            margin-right: 1.5rem;
+        }
+
+    }
 
     &__motion{
         margin-top: 0.3rem;
         width: 100%;
-    height: 10rem;
-    object-fit: cover;
-    border-radius: 4px;
+        height: 50vw;
+        object-fit: cover;
+        border-radius: 4px;
+
+        @include tablet{
+            width: 50%;
+            height: 25vw;
+            margin-bottom: 1rem;
+        }
+        @include desktop{
+            width: 100%;
+            height: 10.7rem;
+        }
     }
 
+    &__form{
+        @include tablet{
+            border-bottom: $mercury 1px solid;
+            margin-bottom: 1.5rem;
+        }
+        @include desktop{
+            width: 100%;
+            border:none;
+            margin:0%;
+        }
+    }
 
     &__subtitle{
         font-weight: 700;
         font-size: 0.813rem;
         color: $silver;
-        
+
+        @include tablet{
+            font-size: 0.825rem;
+            margin-top: 1rem;
+        }    
     }
 
     &__title-box{
@@ -44,6 +114,10 @@
         margin: 0.3rem 0 1rem 0;
         background-color: $alabaster;
         color: $brainFlix-black; 
+
+        @include desktop{
+            margin-bottom: 1.4rem;
+        }
     }
 
     &__description-box{
@@ -56,8 +130,50 @@
         margin: 0.3rem 0;
         background-color: #FAFAFA;
         color: $brainFlix-black;
+
+        @include tablet{
+            margin-bottom: 1rem;
+        }
+
+        @include desktop{
+            margin-bottom: 1.4rem;
+        }
     }
 
+    &__btn-box{
+        @include tablet{
+        display: flex;
+        flex-direction: row-reverse;
+        align-self: flex-end;
+        width: 50%;
+        }
+        @include desktop{
+            width: 28%;
+        }
+    }
+
+    &__btn--publish{
+        @include btn-mobile; 
+        width: 100%;
+        margin: 1rem 0;
+        position: relative;
+
+        @include tablet{
+            margin:0;
+            font-size: 0.9rem;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+        
+        &::before{
+            content: url('../\ Assets/Images/Icons/publish.svg');
+            top:0.5rem;
+            left: 0.5rem;
+            position: absolute;
+        }
+    }
 
     &__btn--cancel{
         height: 40px;
@@ -70,31 +186,8 @@
         color: $brainFlix-blue;
         border: none;
 
-    }
-
-
-    &__btn--publish{
-        @include btn-mobile; 
-        width: 100%;
-        margin: 1rem 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-
-        &:hover{
-            cursor: pointer;
+        @include tablet{
+            font-size: 0.9rem;
         }
-        
-        &::before{
-            content: url('../\ Assets/Images/Icons/publish.svg');
-            top:0.5rem;
-            left: 0.5rem;
-            position: absolute;
-        }
-
     }
-
-
-
 }

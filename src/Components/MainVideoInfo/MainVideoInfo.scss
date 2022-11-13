@@ -26,6 +26,10 @@
             font-weight: 900;
             margin: 0%;
             }
+
+            @include desktop{
+                padding-top: 1.5rem;
+            }
     
     }
 

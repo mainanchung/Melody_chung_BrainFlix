@@ -1,4 +1,33 @@
-@use '../../style/partials/font' as *;
-@use '../../style/partials/mixins'as *;
-@use '../../style/partials/variable' as *;
+@use '../style/partials/font' as *;
+@use '../style/partials/mixins'as *;
+@use '../style/partials/variable' as *;
 
+.hero-video{
+    background-color: $brainFlix-DarkBlack;
+    width: 100%;
+    height: 11.5rem;
+    object-fit: cover;
+  
+    @include tablet{
+      object-fit: contain;
+      height: 108vh;
+    }
+  
+    @include desktop{
+      height: 35rem;
+    }
+  }
+  
+  .bottom-container{
+    @include desktop{
+      display: flex;
+    }
+    
+  }
+  
+  .main-left{
+    @include desktop{
+      width: 70%;
+      border-right: solid $mercury 1px;
+    }
+  }
