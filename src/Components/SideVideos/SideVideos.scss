@@ -13,7 +13,11 @@
 
     @include desktop{
         padding-left: 2rem;
+        padding-top: 1.5rem;
+    }
 
+    &__link{
+        text-decoration: none;
     }
 
     &__title{
@@ -50,8 +54,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width:10rem;
-        height: 6rem; 
+        width:11rem;
+        height: 5.5rem; 
+
     }
 
     &--title, &--author{
@@ -71,10 +76,13 @@
 
     &--title{
         margin-bottom: 0%;
+      
     }
 
     &--author{
         margin-top: 0%;
+
+      
     }
 
  
