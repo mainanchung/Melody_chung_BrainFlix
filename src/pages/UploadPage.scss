@@ -115,6 +115,15 @@
         background-color: $alabaster;
         color: $brainFlix-black; 
 
+        &:focus{
+            border: none;
+            outline: $brainFlix-blue 2px solid;
+        } 
+        
+        &--invalid{
+            border: 1px #d22d2d solid;
+        }
+
         @include desktop{
             margin-bottom: 1.4rem;
         }
@@ -130,6 +139,15 @@
         margin: 0.3rem 0;
         background-color: #FAFAFA;
         color: $brainFlix-black;
+
+        &:focus{
+            border: none;
+            outline: $brainFlix-blue 2px solid;
+        } 
+        
+        &--invalid{
+            border: 1px #d22d2d solid;
+        }
 
         @include tablet{
             margin-bottom: 1rem;
@@ -185,6 +203,10 @@
         background-color: $white;
         color: $brainFlix-blue;
         border: none;
+
+        &:hover{
+            cursor: pointer;
+        }
 
         @include tablet{
             font-size: 0.9rem;

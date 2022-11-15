@@ -9,11 +9,56 @@ function UploadPage(){
 
     const navigate = useNavigate();
     const upload = () => {
-        alert("UPLOADING...")
+       if(isFormValid()){
+        alert("Uploading...")
         navigate("/")
+        }else{
+            alert("Please complete the Form.")
+            navigate("/upload-page")
+        }
+    }
+    const [videoNameInput, setVideoNameInput ] = useState("")
+    const [videoNameValid, setVideoNameValid] = useState(true)
+    const [descriptionInput, setDescriptionInput] = useState("")
+    const [descriptionValid, setDescriptionValid] = useState(true)
+   
+    const isFormValid = () =>{
+        let formValid = true
+
+        if(videoNameInput === "" || descriptionInput === ""){
+            setVideoNameValid(false)
+            setDescriptionValid(false)
+            formValid = false
+            if(videoNameInput !== ""){
+                setVideoNameValid(true)
+            }
+            if(descriptionInput !== "" ){
+                setDescriptionValid(true)
+            } 
+         }else {
+            setVideoNameValid(true)
+            setDescriptionValid(true)  
+            return formValid
+        }
+       
     }
 
-   return(
+    const ChangeVideoName = (event) => {
+        event.preventDefault()
+        if (videoNameValid === false ) {
+            setVideoNameValid(true)
+        }
+        setVideoNameInput(event.target.value);
+    }
+    const ChangeDescription = (event) =>{
+        event.preventDefault()
+        if(descriptionValid === false){
+            setDescriptionValid(true)
+        }
+        setDescriptionInput(event.target.value);   
+    }
+
+   return( 
         <>
         <Header />
         <div className="upload-video">
@@ -30,10 +75,19 @@ function UploadPage(){
 
                 <form className="upload-video__form">
                     <label className="upload-video__subtitle">TITLE YOUR VIDEO</label>
-                    <input className="upload-video__title-box" id="video__title-box" name="video__title-box" placeholder="Add a title to your video"></input>
+                    <input className={`upload-video__title-box ${videoNameValid? "" : "upload-video__title-box--invalid"} `}
+                    id="video__title-box" 
+                    name="video__title-box" 
+                    placeholder="Add a title to your video"
+                    onChange={ChangeVideoName}></input>
                     
                     <label className="upload-video__subtitle">ADD A VIDEO DESCRIPTION</label>
-                    <textarea className="upload-video__description-box" id="video__title-box" name="video__title-box" placeholder="Add a description to your video"></textarea>    
+                    <textarea className={`upload-video__description-box ${descriptionValid? "" : "upload-video__description-box--invalid" }`}
+                    id="video__title-box" 
+                    name="video__title-box" 
+                    placeholder="Add a description to your video"
+                    onChange={ChangeDescription}></textarea>    
+
                 </form>  
             </div>
             <div className="upload-video__btn-box">
