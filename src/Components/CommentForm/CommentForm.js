@@ -17,6 +17,9 @@ function CommentForm(){
     
     const handleChangeComment = (event) => {
         event.preventDefault()
+        if(commentValid === false){
+            setCommentValid(true)
+        }
         setCommentInput(event.target.value);
     }
 
