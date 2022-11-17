@@ -39,8 +39,7 @@ function UploadPage(){
             setVideoNameValid(true)
             setDescriptionValid(true)  
             return formValid
-        }
-       
+        }   
     }
 
     const ChangeVideoName = (event) => {
