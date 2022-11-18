@@ -17,21 +17,20 @@ function Home() {
     let ApiKey = "d5919928-4ca3-46f7-bf5e-f3175f260352";
    
     useEffect(()=> {
-    axios.get(`https://project-2-api.herokuapp.com/videos?api_key=${ApiKey}`).then((response) =>{
+    axios.get('http://localhost:8080/videos').then((response) =>{
         setSideVideos(response.data)
     })
     },[])
 
     useEffect(()=>{
         if(VideoId){
-        axios.get(`https://project-2-api.herokuapp.com/videos/${VideoId}?api_key=${ApiKey}`).then((response) => {
+        axios.get(`http://localhost:8080/videos/${VideoId}`).then((response) => {
         const videosDetail =  response.data;  
         console.log(videosDetail)
          setCurrentVideo(videosDetail)
-
         })}  else {
-            axios.get(`https://project-2-api.herokuapp.com/videos?api_key=${ApiKey}`).then((response) =>{
-               axios.get(`https://project-2-api.herokuapp.com/videos/${response.data[0].id}?api_key=${ApiKey}`).then((response) => {
+            axios.get('http://localhost:8080/videos').then((response) =>{
+               axios.get(`http://localhost:8080/videos/${response.data[0].id}`).then((response) => {
                     const videosDetail =  response.data;  
                     console.log(videosDetail)
                     setCurrentVideo(videosDetail)
