@@ -7,33 +7,35 @@ import SideVideos from '../Components/SideVideos/SideVideos';
 
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams, NavLink, } from 'react-router-dom'
+import { useParams, NavLink} from 'react-router-dom'
 
 function Home() {
 
     const [sideVideos, setSideVideos] = useState([])
     const [currentVideo, setCurrentVideo] = useState(null)
     const {VideoId} = useParams();
-    let ApiKey = "d5919928-4ca3-46f7-bf5e-f3175f260352";
    
     useEffect(()=> {
     axios.get('http://localhost:8080/videos').then((response) =>{
+        // console.log(response.data)
         setSideVideos(response.data)
-    })
+    }).catch((error) => {
+        console.log(error)
+      })
     },[])
 
     useEffect(()=>{
         if(VideoId){
         axios.get(`http://localhost:8080/videos/${VideoId}`).then((response) => {
         const videosDetail =  response.data;  
-        console.log(videosDetail)
+        // console.log(videosDetail)
          setCurrentVideo(videosDetail)
-        })}  else {
+        })} else {
             axios.get('http://localhost:8080/videos').then((response) =>{
                axios.get(`http://localhost:8080/videos/${response.data[0].id}`).then((response) => {
-                    const videosDetail =  response.data;  
-                    console.log(videosDetail)
-                    setCurrentVideo(videosDetail)
+                    const videoDefaut = response.data;  
+                    // console.log(videoDefaut)
+                    setCurrentVideo(videoDefaut)
                 })
             })    
         }

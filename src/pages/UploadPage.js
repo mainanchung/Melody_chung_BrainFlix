@@ -3,59 +3,73 @@ import UploadVideo from '../ Assets/Images/Upload-video-preview.jpg';
 import './UploadPage.scss';
 
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import axios from "axios";
 
 function UploadPage(){
 
     const navigate = useNavigate();
-    const upload = () => {
-       if(isFormValid()){
-        alert("Uploading...")
-        navigate("/")
-        }else{
-            alert("Please complete the Form.")
-            navigate("/upload-page")
-        }
-    }
-    const [videoNameInput, setVideoNameInput ] = useState("")
-    const [videoNameValid, setVideoNameValid] = useState(true)
-    const [descriptionInput, setDescriptionInput] = useState("")
-    const [descriptionValid, setDescriptionValid] = useState(true)
-   
-    const isFormValid = () =>{
-        let formValid = true
+    const title = useRef();
+    const description = useRef();
 
-        if(videoNameInput === "" || descriptionInput === ""){
-            setVideoNameValid(false)
-            setDescriptionValid(false)
-            formValid = false
-            if(videoNameInput !== ""){
-                setVideoNameValid(true)
+    const [titleError, setTitleError] = useState(false);
+    const [descriptionError, setDescriptionError] = useState(false);
+
+    const isFormValid = (title, description) => {
+        if (title === "" || description === ""){
+            setTitleError(true)
+            setDescriptionError(true)
+            if(title !== ""){
+                setTitleError(false)
             }
-            if(descriptionInput !== "" ){
-                setDescriptionValid(true)
-            } 
-         }else {
-            setVideoNameValid(true)
-            setDescriptionValid(true)  
-            return formValid
-        }   
+            if(description !== ""){
+                setDescriptionError(false)
+            }
+            return false
+        }else{
+            setTitleError(false)
+            setDescriptionError(false)
+            return true
+        }
+    }
+    
+    const addtitle = () =>{
+        if(title.current.value !== ""){
+            setTitleError(false) 
+        }
     }
 
-    const ChangeVideoName = (event) => {
-        event.preventDefault()
-        if (videoNameValid === false ) {
-            setVideoNameValid(true)
+    const addDescription = () =>{
+        if(description.current.value !== ""){
+            setDescriptionError(false)
         }
-        setVideoNameInput(event.target.value);
     }
-    const ChangeDescription = (event) =>{
-        event.preventDefault()
-        if(descriptionValid === false){
-            setDescriptionValid(true)
-        }
-        setDescriptionInput(event.target.value);   
-    }
+    
+    const addVideo = (event) =>{
+        event.preventDefault();
+        let titleInput = title.current.value
+        let descriptionInput = description.current.value
+        let newVideo = {
+            title:titleInput,
+            description: descriptionInput
+        };
+
+        if(!isFormValid(titleInput, descriptionInput )){
+           alert("Please complete the form.")
+           navigate("/upload-page")  
+        }else{
+            axios.post('http://localhost:8080/videos', newVideo).then((response) => {
+            console.log(response.data)
+            alert("Uploading...")
+            
+            navigate("/")
+          }).catch((error) => {
+            console.log(error)
+             })
+            }
+            titleInput = ""
+            descriptionInput = ""
+    }  
 
    return( 
         <>
@@ -72,25 +86,25 @@ function UploadPage(){
                         </video>
                 </div>
 
-                <form className="upload-video__form">
+                <form  className="upload-video__form">
                     <label className="upload-video__subtitle">TITLE YOUR VIDEO</label>
-                    <input className={`upload-video__title-box ${videoNameValid? "" : "upload-video__title-box--invalid"} `}
+                    <input onChange={addtitle} className={`upload-video__title-box ${!titleError? "" : "upload-video__title-box--invalid"} `}
                     id="video__title-box" 
-                    name="video__title-box" 
+                    name="title" 
                     placeholder="Add a title to your video"
-                    onChange={ChangeVideoName}></input>
+                    ref={title}></input>
                     
                     <label className="upload-video__subtitle">ADD A VIDEO DESCRIPTION</label>
-                    <textarea className={`upload-video__description-box ${descriptionValid? "" : "upload-video__description-box--invalid" }`}
+                    <textarea onChange={addDescription} className={`upload-video__description-box ${!descriptionError? "" : "upload-video__description-box--invalid" }`} 
                     id="video__title-box" 
-                    name="video__title-box" 
+                    name="description" 
                     placeholder="Add a description to your video"
-                    onChange={ChangeDescription}></textarea>    
+                    ref={description}></textarea>    
 
                 </form>  
             </div>
             <div className="upload-video__btn-box">
-                    <button onClick={upload} className="upload-video__btn--publish">PUBLISH</button>   
+                    <button onClick={addVideo} className="upload-video__btn--publish">PUBLISH</button>   
                     <button className="upload-video__btn--cancel">CANCEL</button>
                 </div> 
         </div>
