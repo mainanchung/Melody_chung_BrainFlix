@@ -1,8 +1,10 @@
 import { formatDateRelative } from "../utile";
+import { useState, useRef, useEffect } from 'react'
 
 function CommentList({id, timestamp, name, comment }){
     // let convertTimestamp = new Intl.DateTimeFormat('en-US', { day: '2-digit', month: '2-digit', year:'numeric'}).format(timestamp)
     let timeAgo = formatDateRelative(timestamp)
+
     return(
         <div className='comments__box'> 
             <div className="comments__box--avatar"></div>

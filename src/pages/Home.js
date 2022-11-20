@@ -30,12 +30,14 @@ function Home() {
         const videosDetail =  response.data;  
         // console.log(videosDetail)
          setCurrentVideo(videosDetail)
+         
         })} else {
             axios.get('http://localhost:8080/videos').then((response) =>{
                axios.get(`http://localhost:8080/videos/${response.data[0].id}`).then((response) => {
                     const videoDefaut = response.data;  
                     // console.log(videoDefaut)
                     setCurrentVideo(videoDefaut)
+                    
                 })
             })    
         }
@@ -63,6 +65,7 @@ function Home() {
                   /> 
                   <Comments 
                     currentVideo={currentVideo}
+                    commentChange={setCurrentVideo}
                     />
                 </div>
     
