@@ -61,7 +61,6 @@ function UploadPage(){
             axios.post('http://localhost:8080/videos', newVideo).then((response) => {
             console.log(response.data)
             alert("Uploading...")
-            
             navigate("/")
           }).catch((error) => {
             console.log(error)

@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function CommentForm(){
-    const [ commentInput, setCommentInput] = useState("");
-    const [ commentValid, setCommentValid] = useState(true)
+   
+    const [ commentValid, setCommentValid] = useState(true);
+    const comment = useRef();
 
     const isCommentValid = () => {
-        if(commentInput === ""){
-            setCommentInput("");
+        if(comment.current.value === ""){
+            comment.current.value="";
             setCommentValid(false)
-            
         }else{
-            setCommentInput("");
+            comment.current.value =""
             setCommentValid(true)
         }  
     }
@@ -20,14 +20,19 @@ function CommentForm(){
         if(commentValid === false){
             setCommentValid(true)
         }
-        setCommentInput(event.target.value);
     }
 
     return(
         <div className='comments__right'>
             <form className='comments-form'>
                 <label className='comments-form__title'>JOIN THE CONVERSATION</label>
-                <textarea className={`comments-form__area ${commentValid? " ":"comments-form__area--invalid"}`} id="commentInput" name='commentInput' onChange={handleChangeComment} placeholder='Add a new comment' value={commentInput} ></textarea>
+                <textarea 
+                ref={comment}
+                className={`comments-form__area ${commentValid? " ":"comments-form__area--invalid"}`} 
+                id="commentInput" 
+                name='commentInput' 
+                onChange={handleChangeComment} 
+                placeholder='Add a new comment'></textarea>
             </form>
                 <button onClick={isCommentValid} className='comments-form__btn' type='submit' >COMMENT</button>
         </div>
