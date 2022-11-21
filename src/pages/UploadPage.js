@@ -1,4 +1,4 @@
-import Header from "../Components/Header/Header";
+
 import UploadVideo from '../ Assets/Images/Upload-video-preview.jpg';
 import './UploadPage.scss';
 
@@ -72,7 +72,6 @@ function UploadPage(){
 
    return( 
         <>
-        <Header />
         <div className="upload-video">
             <h2 className="upload-video__title">Upload Video</h2>
 

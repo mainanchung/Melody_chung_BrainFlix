@@ -1,5 +1,4 @@
 import { formatDateRelative } from "../utile";
-import { useState, useRef, useEffect } from 'react'
 
 function CommentList({id, timestamp, name, comment }){
     // let convertTimestamp = new Intl.DateTimeFormat('en-US', { day: '2-digit', month: '2-digit', year:'numeric'}).format(timestamp)

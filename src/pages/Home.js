@@ -1,6 +1,5 @@
 import './Home.scss';
 
-import Header from '../Components/Header/Header';
 import MainVideoInfo from '../Components/MainVideoInfo/MainVideoInfo';
 import Comments from '../Components/Comments/Comments';
 import SideVideos from '../Components/SideVideos/SideVideos';
@@ -37,9 +36,12 @@ function Home() {
                     const videoDefaut = response.data;  
                     // console.log(videoDefaut)
                     setCurrentVideo(videoDefaut)
-                    
-                })
-            })    
+                }).catch((error) => {
+                    console.log(error)
+                  })
+            }).catch((error) => {
+                console.log(error)
+              })    
         }
 
     },[VideoId])
@@ -48,9 +50,6 @@ function Home() {
         <>
         {currentVideo?
         <>
-        <div className="header">
-          <Header />
-        </div>
         <main>
             <div className='video__container'>
               <video className='hero-video' controls poster={currentVideo.image}>
